@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_infoplant" default="compile.module.infoplant">
+  <dirname property="module.infoplant.basedir" file="${ant.file.module_infoplant}"/>
+  
+  <property name="module.jdk.home.infoplant" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.infoplant" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.infoplant" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.infoplant" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="infoplant.output.dir" value="${module.infoplant.basedir}/out/production/InfoPlant"/>
+  <property name="infoplant.testoutput.dir" value="${module.infoplant.basedir}/out/test/InfoPlant"/>
+  
+  <path id="infoplant.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="infoplant.module.production.classpath">
+    <path refid="${module.jdk.classpath.infoplant}"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-excelant-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-examples-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-schemas-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-scratchpad-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/com.bsb.intellij.plugins.xmlbeans-2.1.1.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/ooxml-lib/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  <path id="infoplant.runtime.production.module.classpath">
+    <pathelement location="${infoplant.output.dir}"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-excelant-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-examples-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-schemas-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-scratchpad-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/com.bsb.intellij.plugins.xmlbeans-2.1.1.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/ooxml-lib/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  <path id="infoplant.module.classpath">
+    <path refid="${module.jdk.classpath.infoplant}"/>
+    <pathelement location="${infoplant.output.dir}"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-excelant-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-examples-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-schemas-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-scratchpad-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/com.bsb.intellij.plugins.xmlbeans-2.1.1.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/ooxml-lib/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  <path id="infoplant.runtime.module.classpath">
+    <pathelement location="${infoplant.testoutput.dir}"/>
+    <pathelement location="${infoplant.output.dir}"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-excelant-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-examples-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-ooxml-schemas-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/poi-scratchpad-3.13-20150929.jar"/>
+    <pathelement location="${basedir}/../../Downloads/com.bsb.intellij.plugins.xmlbeans-2.1.1.jar"/>
+    <pathelement location="${basedir}/../../Downloads/poi-3.13/ooxml-lib/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.infoplant">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.infoplant">
+    <patternset refid="excluded.from.module.infoplant"/>
+  </patternset>
+  
+  <path id="infoplant.module.sourcepath">
+    <dirset dir="${module.infoplant.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.infoplant" depends="compile.module.infoplant.production,compile.module.infoplant.tests" description="Compile module InfoPlant"/>
+  
+  <target name="compile.module.infoplant.production" depends="register.custom.compilers" description="Compile module InfoPlant; production classes">
+    <mkdir dir="${infoplant.output.dir}"/>
+    <javac2 destdir="${infoplant.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.infoplant}/javac">
+      <compilerarg line="${compiler.args.infoplant}"/>
+      <bootclasspath refid="infoplant.module.bootclasspath"/>
+      <classpath refid="infoplant.module.production.classpath"/>
+      <src refid="infoplant.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.infoplant"/>
+    </javac2>
+    
+    <copy todir="${infoplant.output.dir}">
+      <fileset dir="${module.infoplant.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.infoplant.tests" depends="register.custom.compilers,compile.module.infoplant.production" description="compile module InfoPlant; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.infoplant" description="cleanup module">
+    <delete dir="${infoplant.output.dir}"/>
+    <delete dir="${infoplant.testoutput.dir}"/>
+  </target>
+</project>

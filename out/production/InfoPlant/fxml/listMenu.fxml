@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="480.0" prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.listMenuController">
+  <content>
+      <AnchorPane>
+         <children>
+            <Label layoutX="178.0" layoutY="14.0" text="รายการ" underline="true">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnBack" layoutX="14.0" layoutY="587.0" mnemonicParsing="false" text="ย้อนกลับ" />
+            <Button fx:id="btnNext" layoutX="409.0" layoutY="587.0" mnemonicParsing="false" text="ถัดไป" />
+            <TextField fx:id="tfID" layoutX="230.0" layoutY="587.0" promptText="ใส่ ID แล้วกดถัดไป"/>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="66.0" prefHeight="515.0" prefWidth="453.0">
+               <content>
+                  <TableView fx:id="tblist" editable="true">
+                    <columns>
+                      <TableColumn fx:id="colA" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="colD" prefWidth="75.0" text="หมู่" />
+                      <TableColumn fx:id="colB" minWidth="100.0" prefWidth="-1.0" text="ชื่อแปลง" />
+                        <TableColumn fx:id="colC" minWidth="100.0" prefWidth="-1.0" text="ปีที่ปลูก" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </content>
+            </ScrollPane>
+            <ChoiceBox fx:id="cbGroup" layoutX="162.0" layoutY="587.0" prefHeight="25.0" prefWidth="62.0" />
+         </children>
+      </AnchorPane>
+  </content>
+</ScrollPane>

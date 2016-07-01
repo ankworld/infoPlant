@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="InfoPlant">
+    <output-path>$PROJECT_DIR$/out/artifacts/InfoPlant</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="controller.Main" />
+        <option name="description" value="Use in KMITL Only" />
+        <option name="htmlParamFile" value="" />
+        <option name="nativeBundle" value="exe" />
+        <option name="paramFile" value="" />
+        <option name="title" value="InfoPlant" />
+        <option name="vendor" value="TKSS" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="InfoPlant.jar">
+        <element id="module-output" name="InfoPlant" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/poi-3.13/ooxml-lib/xmlbeans-2.6.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/poi-3.13/poi-scratchpad-3.13-20150929.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/poi-3.13/poi-ooxml-schemas-3.13-20150929.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/poi-3.13/poi-ooxml-3.13-20150929.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/poi-3.13/poi-excelant-3.13-20150929.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/poi-3.13/poi-examples-3.13-20150929.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/poi-3.13/poi-3.13-20150929.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/Downloads/com.bsb.intellij.plugins.xmlbeans-2.1.1.jar" path-in-jar="/" />
+      </element>
+    </root>
+  </artifact>
+</component>

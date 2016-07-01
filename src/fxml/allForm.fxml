@@ -1,0 +1,1419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.allFormController">
+   <children>
+       <ToolBar>
+           <items>
+               <Button fx:id="btnBack" mnemonicParsing="false" text="Back" />
+               <Button fx:id="toolBtnSave" mnemonicParsing="false" text="Save" />
+           </items>
+       </ToolBar>
+      <TabPane tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Plot Infomation">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <GridPane maxHeight="-Infinity" maxWidth="-Infinity">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="49.0" prefWidth="161.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="0.0" prefWidth="140.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="10.0" prefWidth="140.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="10.0" prefWidth="160.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="582.0" minWidth="10.0" prefWidth="149.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="ประวัติแปลงปลูก" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                              <Label text="1.ชื่อแปลง" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="2.ที่อยู่" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="ประเภทของเอกสารสิทธิ์" wrapText="true" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="ปีที่ปลูก" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="พื้นที่ปลูก" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="3.จำนวนต้นตาย" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="สาเหตุการตาย" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfPlotName" prefHeight="25.0" prefWidth="466.0" promptText="ชื่อแปลง" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotAddr" promptText="ที่อยู่แปลง" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <ChoiceBox fx:id="cbPlotType" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+                              <TextField fx:id="tfYear" promptText="ปี พ.ศ." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <RadioButton fx:id="rbFourEight" mnemonicParsing="false" selected="true" text="4-8 ปี" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="A" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbEightSixT" mnemonicParsing="false" text="8-16 ปี" toggleGroup="$A" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbSixTeenUp" mnemonicParsing="false" text="16 ปีขึ้นไป" toggleGroup="$A" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <Label text="จำนวนต้น" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="จำนวนต้นปลูกทดแทน" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfPlotSize" promptText="พื้นที่(ไร่)" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotTreeAll" promptText="จำนวนต้น" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotTreeDead" promptText="จำนวนต้น" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotTreeRe" promptText="จำนวนต้น" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotHowToDead" promptText="สาเหตุการตาย" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="4.ชื่อเจ้าของแปลง" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="ที่อยู่" GridPane.rowIndex="10">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="โทรศัพท์" GridPane.rowIndex="11">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfPlotOwnerName" promptText="ชื่อเจ้าของ" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotOwnerAddr" promptText="ที่อยู่เจ้าของ" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="10">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotOwnerTel" promptText="เบอร์โทรศัพท์" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="11">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfPlotAnno" promptText="หมายเหคุ" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="12" />
+                              <Label text="5.หมายเหตุ" GridPane.rowIndex="12" />
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Background">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <GridPane prefHeight="569.0" prefWidth="717.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="800.0" minWidth="10.0" prefWidth="205.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="70.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="121.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="196.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="ข้อมูลพื้นฐานแปลงปลูก" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                              <Label text="1.ชุดดินตามแผนที่ดิน" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="2.พิกัดภูมิศาสตร์" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="3.สภาพพื้นที่" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="4.ลักษณะของเนื้อดิน" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="5.การเตรียมพื้นที่ปลูก" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="6.การอนุรักษ์ดิน" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="7.วิธีการให้น้ำ" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="แหล่งน้ำที่ใช้" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="8.การใช้พื้นที่ก่อนปลูกปาล์มน้ำมัน" GridPane.rowIndex="10">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="9.รูปแบบของการปลูก" GridPane.rowIndex="11">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="10.การเก็บเกี่ยว" GridPane.rowIndex="13">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11.การกำจัดศัตรูพืชด้วยชีวะวิธี" GridPane.rowIndex="14">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfSoilType" promptText="ชุดติน" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tfGPS" promptText="พิกัด" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <ChoiceBox fx:id="landStatus" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                              <TextField fx:id="tfOTLandTatus" promptText="กรุณากรอกเมื่อเลือกอื่นๆ" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                              <ChoiceBox fx:id="soilType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                              <TextField fx:id="tfOTsoilType" promptText="กรุณากรอกเมื่อเลือกอื่นๆ" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                              <ChoiceBox fx:id="preType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                              <TextField fx:id="tfOTpreType" promptText="กรุณากรอกเมื่อเลือกอื่นๆ" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <ChoiceBox fx:id="soilPreserve" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                              <TextField fx:id="tfOTsoilPreserve" promptText="กรุณากรอกเมื่อเลือกอื่นๆ" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                              <RadioButton fx:id="rbGive" mnemonicParsing="false" selected="true" text="มี" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="B8" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbNGive" mnemonicParsing="false" text="ไม่มี" toggleGroup="$B8" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbRain" mnemonicParsing="false" selected="true" text="น้ำฝน" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="B9" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbRiver" mnemonicParsing="false" text="คลอง ห้วย บึง" toggleGroup="$B9" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbPool" mnemonicParsing="false" text="สระเก็บน้ำใน" toggleGroup="$B9" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <TextField fx:id="tfBeforePalm" promptText="การใช้พื้นที่" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="10">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <RadioButton fx:id="rbTri" mnemonicParsing="false" selected="true" text="แบบสามเหลี่ยมด้านเท่า" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="11">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="B11" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <ChoiceBox fx:id="cbTriSize" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                              <RadioButton fx:id="rbSqur" mnemonicParsing="false" text="แบบสี่เหลี่ยม" toggleGroup="$B11" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="12">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <TextField fx:id="tfSqurSize" promptText="กรอกขนาดเมื่อเลือกสี่เหลี่ยม" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                              <ChoiceBox fx:id="harvestType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+                              <TextField fx:id="tfOTHarvest" promptText="กรุณากรอกเมื่อเลือกอื่นๆ" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+                              <RadioButton fx:id="rbKillBug" mnemonicParsing="false" selected="true" text="มี" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="B13" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rbNKillBug" mnemonicParsing="false" text="ไม่มี" toggleGroup="$B13" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <TextField fx:id="tfKillBug" promptText="กรุณากรอกเมื่อเลือก มี" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="14">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="12.หมายเหตุ" GridPane.rowIndex="16" />
+                              <TextField fx:id="tfBackAnno" promptText="หมายเหตุ" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="16" />
+
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Breeding Information">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <GridPane prefHeight="509.0" prefWidth="679.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="121.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="206.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="193.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="158.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="ข้อมูลด้านพันธุ์" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                              <Label text="1.ที่มาของต้นพันธุ์" GridPane.rowIndex="2" />
+                              <Label text="2.ชนิดของต้นพันธุ์" GridPane.rowIndex="7" />
+                              <Label text="3.การคัดกล้า" GridPane.rowIndex="9" />
+                              <Label text="4.อายุต้นกล้าที่ใช้ปลูก" GridPane.rowIndex="10" />
+                              <RadioButton fx:id="rbC11" mnemonicParsing="false" selected="true" text="ซื้อเมล็ดงอกมาเพาะเอง" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="C2" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rbC12" mnemonicParsing="false" text="ซื้อกล้าระยะ Pre Nursery มาบำรุงรักษาแล้วปลูก" toggleGroup="$C2" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="rbC13" mnemonicParsing="false" text="นำเมล็ดจากแปลงปลูกมาเพาะ" toggleGroup="$C2" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="rbC14" mnemonicParsing="false" text="ซื้อจากแปลงเพาะกล้า" toggleGroup="$C2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <RadioButton fx:id="rbC15" mnemonicParsing="false" text="ซื้อจากแปลงเพาะกล้าของบริษัท" toggleGroup="$C2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <RadioButton fx:id="rbC16" mnemonicParsing="false" text="รับแจกจากหน่วยงานราชการ" toggleGroup="$C2" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <RadioButton fx:id="rbC17" mnemonicParsing="false" text="อื่นๆ" toggleGroup="$C2" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="tfC14" promptText="กรุณากรอกเมื่อเลือก ซื้อจากแปลงเพาะกล้า" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                              <TextField fx:id="tfC15" promptText="กรุณากรอกเมื่อเลือก ซื้อจากแปลงเพาะกล้าของบริษัท" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                              <TextField fx:id="tfC16" promptText="กรุณากรอกเมื่อเลือก รับแจกจากหน่วยงานราชการ" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                              <TextField fx:id="tfC17" promptText="กรุณากรอกเมื่อเลือก อื่นๆ" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+                              <RadioButton fx:id="rbC21" mnemonicParsing="false" selected="true" text="ลูกผสม DxP" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="C7" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <TextField fx:id="tfC21" promptText="กรุณากรอกเมื่อเลือก ลูกผสม DxP" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                              <RadioButton fx:id="rbC22" mnemonicParsing="false" text="ไม่แน่ใจ" toggleGroup="$C7" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <RadioButton fx:id="rbC31" mnemonicParsing="false" selected="true" text="มีการคัดต้นกล้าก่อนปลูก" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="C9" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rbC32" mnemonicParsing="false" text="ไม่มีการคัดต้นกล้าก่อนปลูก" toggleGroup="$C9" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <TextField fx:id="tfC41" promptText="อายุ(เดือน)" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <Label text="เดือน" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <Label text="หมายเหตุ" GridPane.rowIndex="11" />
+                              <TextField fx:id="tfBDAnno" promptText="หมายเหคุ" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="11" />
+                           </children>
+                        </GridPane>
+                     </content>
+                     <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </padding>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Yield">
+               <content>
+                  <ScrollPane fitToWidth="true">
+                     <content>
+                        <VBox>
+                           <children>
+                              <Label alignment="CENTER" text="ข้อมูลการให้ผลผลิต">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="Yield" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colDayY" prefWidth="75.0" text="วัน/เดือน/ปี" />
+                                    <TableColumn prefWidth="75.0" text="ทะลาย">
+                                       <columns>
+                                          <TableColumn fx:id="colWeightTY" prefWidth="75.0" text="น้ำหนัก (กก.)" />
+                                          <TableColumn fx:id="colCostTY" prefWidth="75.0" text="ราคา" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colSumTY" prefWidth="128.33334350585938" text="รวมเงินทะลาย (บาท)" />
+                                    <TableColumn prefWidth="96.66665649414062" text="ลูกร่วง">
+                                       <columns>
+                                          <TableColumn fx:id="colWeightRY" prefWidth="75.0" text="น้ำหนัก (กก.)" />
+                                          <TableColumn fx:id="colCostRY" prefWidth="75.0" text="ราคา" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="colSumRY" prefWidth="75.0" text="รวมเงินลูกร่วง (บาท)" />
+                                    <TableColumn fx:id="colSumWeightY" prefWidth="75.0" text="น้ำหนักรวมทะลายและลูกร่วง (กก)" />
+                                    <TableColumn fx:id="colSumCostY" prefWidth="75.0" text="รวมเงินทะลายและลูกร่วง (บาท)" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox>
+                                 <children>
+                                    <TextField fx:id="tfMY" promptText="วัน/เดือน/ปี" />
+                                    <TextField fx:id="tfBunchWeight" layoutX="10.0" layoutY="10.0" promptText="น้ำหนัก" />
+                                    <TextField fx:id="tfBunchCost" layoutX="181.0" layoutY="10.0" promptText="ราคา" />
+                                    <TextField fx:id="tfBunchSum" layoutX="352.0" layoutY="10.0" promptText="รวมเงินทะลาย" />
+                                    <TextField fx:id="tfProductWeight" layoutX="10.0" layoutY="10.0" promptText="น้ำหนัก" />
+                                    <TextField fx:id="tfProductCost" layoutX="181.0" layoutY="10.0" promptText="ราคา" />
+                                    <TextField fx:id="tfProductSum" layoutX="352.0" layoutY="10.0" promptText="รวมเงินลูกร่วง" />
+                                    <TextField fx:id="tfSumWeight" layoutX="523.0" layoutY="10.0" promptText="น้ำหนักรวม" />
+                                    <TextField fx:id="tfSumCost" layoutX="1103.0" layoutY="10.0" promptText="ราคารวม" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnAddY" mnemonicParsing="false" text="เพิ่ม" />
+                              <Button fx:id="btnExcelY" mnemonicParsing="false" text="Button" />
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Monthly Yield">
+               <content>
+                  <ScrollPane fitToWidth="true">
+                     <content>
+                        <VBox>
+                           <children>
+                              <Label alignment="CENTER" text="สรุปข้อมูลการให้ผลผลิตรายเดือนในปีต่างๆ">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="MYield" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colMMY" prefWidth="75.0" text="เดือน" />
+                                    <TableColumn prefWidth="75.0" text="ปี 2557">
+                                       <columns>
+                                          <TableColumn fx:id="colW57" prefWidth="75.0" text="น้ำหนักทะลายและลูกร่วง (กก.)" />
+                                          <TableColumn fx:id="colC57" prefWidth="75.0" text="รวมเงิน" />
+                                          <TableColumn fx:id="colA57" prefWidth="67.66" text="ราคาเฉลี่ย" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="75.0" text="ปี 2558">
+                                       <columns>
+                                          <TableColumn fx:id="colW58" prefWidth="75.0" text="น้ำหนักทะลายและลูกร่วง (กก.)" />
+                                          <TableColumn fx:id="colC58" prefWidth="75.0" text="รวมเงิน" />
+                                          <TableColumn fx:id="colA58" prefWidth="67.66" text="ราคาเฉลี่ย" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="75.0" text="ปี 2559">
+                                       <columns>
+                                          <TableColumn fx:id="colW59" prefWidth="75.0" text="น้ำหนักทะลายและลูกร่วง (กก.)" />
+                                          <TableColumn fx:id="colC59" prefWidth="75.0" text="รวมเงิน" />
+                                          <TableColumn fx:id="colA59" prefWidth="67.66" text="ราคาเฉลี่ย" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="75.0" text="ปี 2560">
+                                       <columns>
+                                          <TableColumn fx:id="colW60" prefWidth="75.0" text="น้ำหนักทะลายและลูกร่วง (กก.)" />
+                                          <TableColumn fx:id="colC60" prefWidth="75.0" text="รวมเงิน" />
+                                          <TableColumn fx:id="colA60" prefWidth="67.66" text="ราคาเฉลี่ย" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="75.0" text="ปี 2561">
+                                       <columns>
+                                          <TableColumn fx:id="colW61" prefWidth="75.0" text="น้ำหนักทะลายและลูกร่วง (กก.)" />
+                                          <TableColumn fx:id="colC61" prefWidth="75.0" text="รวมเงิน" />
+                                          <TableColumn fx:id="colA61" prefWidth="67.66" text="ราคาเฉลี่ย" />
+                                       </columns>
+                                    </TableColumn>
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox>
+                                 <children>
+                                    <TextField fx:id="tfMMY" promptText="เดือน" />
+                                    <TextField fx:id="tfW57" layoutX="10.0" layoutY="10.0" promptText="น้ำหนัก" />
+                                    <TextField fx:id="tfC57" layoutX="181.0" layoutY="10.0" promptText="รวมเงิน" />
+                                    <TextField fx:id="tfA57" layoutX="352.0" layoutY="10.0" promptText="ราคาเฉลี่ย" />
+                                    <TextField fx:id="tfW58" layoutX="181.0" layoutY="10.0" promptText="น้ำหนัก" />
+                                    <TextField fx:id="tfC58" layoutX="352.0" layoutY="10.0" promptText="รวมเงิน" />
+                                    <TextField fx:id="tfA58" layoutX="523.0" layoutY="10.0" promptText="ราคาเฉลี่ย" />
+                                    <TextField fx:id="tfW59" layoutX="694.0" layoutY="10.0" promptText="น้ำหนัก" />
+                                    <TextField fx:id="tfC59" layoutX="865.0" layoutY="10.0" promptText="รวมเงิน" />
+                                    <TextField fx:id="tfA59" layoutX="1036.0" layoutY="10.0" promptText="ราคาเฉลี่ย" />
+                                    <TextField fx:id="tfW60" layoutX="885.0" layoutY="10.0" promptText="น้ำหนัก" />
+                                    <TextField fx:id="tfC60" layoutX="1010.0" layoutY="10.0" promptText="รวมเงิน" />
+                                    <TextField fx:id="tfA60" layoutX="1135.0" layoutY="10.0" promptText="ราคาเฉลี่ย" />
+                                    <TextField fx:id="tfW61" layoutX="970.0" layoutY="10.0" promptText="น้ำหนัก" />
+                                    <TextField fx:id="tfC61" layoutX="1066.0" layoutY="10.0" promptText="รวมเงิน" />
+                                    <TextField fx:id="tfA61" layoutX="1163.0" layoutY="10.0" promptText="ราคาเฉลี่ย" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="btnAddMY" mnemonicParsing="false" text="เพิ่ม" />
+                              <Button fx:id="btnExcelMY" mnemonicParsing="false" text="Button" />
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Fertilizer/soil conditioner">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <VBox prefHeight="671.0" prefWidth="1056.0">
+                           <children>
+                              <Label alignment="CENTER" text="ข้อมูลการใช้ปุ๋ย/สารบำรุงดิน">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="FertilizerCond" prefHeight="463.0" prefWidth="1026.0" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colDayFC" prefWidth="75.0" text="วันที่" />
+                                    <TableColumn fx:id="colSoilFC" prefWidth="165.0" text="ชนิดปุ๋ย/วัสดุบำรุงดิน/อื่นๆ" />
+                                    <TableColumn fx:id="colRateFC" prefWidth="147.0" text="อัตราที่ใช้ (กิโลกรัม/ต้น)" />
+                                    <TableColumn fx:id="colCostFC" prefWidth="145.0" text="ราคา/กิโลกรัม (บาท)" />
+                                    <TableColumn fx:id="colSumFC" prefWidth="113.0" text="รวมเงิน (บาท)" />
+                                    <TableColumn fx:id="colAnnoFC" prefWidth="150" text="หมายเหตุ" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="tfFC1" prefHeight="25.0" prefWidth="199.0" promptText="วันที่" />
+                                    <TextField fx:id="tfFC2" prefHeight="25.0" prefWidth="410.0" promptText="ชนิดปุ๋ย" />
+                                    <TextField fx:id="tfFC3" promptText="อัตราการใช้งาน" />
+                                    <TextField fx:id="tfFC4" prefHeight="27.0" prefWidth="172.0" promptText="ราคา/กิโลกรัม" />
+                                    <Button fx:id="btnFC1" mnemonicParsing="false" text="เพิ่ม" />
+                                 </children>
+                              </HBox>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" />
+                                 </padding></Separator>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="15.0" prefWidth="88.0" text="หมายเหตุ" />
+                                    <TextField fx:id="tfFC5" prefHeight="25.0" prefWidth="584.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Fertilizing Record">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <VBox>
+                           <children>
+                              <Label alignment="CENTER" text="ประวัติการใช้ปุ๋ย">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <HBox>
+                                 <children>
+                                    <Label text="ระบุปี" />
+                                    <Pane prefHeight="27.0" prefWidth="14.0" />
+                                    <TextField fx:id="tfYearChooser" promptText="ปี พ.ศ" />
+                                    <Pane prefWidth="200.0" />
+                                    <Label fx:id="lbYearChoose" text="Label">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="FertilizerRec" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="FRC1" prefWidth="185.0" text="ประเภทปุ๋ย" />
+                                    <TableColumn prefWidth="40.0" text="ครั้งที่ 1">
+                                       <columns>
+                                          <TableColumn fx:id="FRC2" prefWidth="75.0" text="เดือน" />
+                                          <TableColumn fx:id="FRC3" prefWidth="75.0" text="จำนวน" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="124.66668701171875" text="ครั้งที่ 2">
+                                       <columns>
+                                          <TableColumn fx:id="FRC4" prefWidth="75.0" text="เดือน" />
+                                          <TableColumn fx:id="FRC5" prefWidth="75.0" text="จำนวน" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="116.0" text="ครั้งที่ 3">
+                                       <columns>
+                                          <TableColumn fx:id="FRC6" prefWidth="75.0" text="เดือน" />
+                                          <TableColumn fx:id="FRC7" prefWidth="75.0" text="จำนวน" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="124.0" text="ครั้งที่ 4">
+                                       <columns>
+                                          <TableColumn fx:id="FRC8" prefWidth="75.0" text="เดือน" />
+                                          <TableColumn fx:id="FRC9" prefWidth="75.0" text="จำนวน" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="FRC10" prefWidth="115.0" text="รวม (กก.)" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <HBox>
+                                 <children>
+                                    <TextField fx:id="FRTF1" prefHeight="25.0" prefWidth="185.0" promptText="ประเภทปุ๋ย" />
+                                    <TextField fx:id="FRTF2" prefWidth="75.0" promptText="เดิอน" />
+                                    <TextField fx:id="FRTF3" prefWidth="75.0" promptText="จำนวน (กก.)" />
+                                    <TextField fx:id="FRTF4" prefWidth="75.0" promptText="เดิอน" />
+                                    <TextField fx:id="FRTF5" prefWidth="75.0" promptText="จำนวน (กก.)" />
+                                    <TextField fx:id="FRTF6" prefWidth="75.0" promptText="เดือน" />
+                                    <TextField fx:id="FRTF7" prefWidth="75.0" promptText="จำนวน (กก.)" />
+                                    <TextField fx:id="FRTF8" prefWidth="75.0" promptText="เดือน" />
+                                    <TextField fx:id="FRTF9" prefWidth="75.0" promptText="จำนวน (กก.)" />
+                                    <Button fx:id="FRB1" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="เพิ่ม" />
+                                 </children>
+                              </HBox>
+                              <AnchorPane prefHeight="65.0" prefWidth="902.0">
+                                 <children>
+                                    <Label layoutX="237.0" layoutY="7.0" text="ครั้งที่ 1" />
+                                    <Label layoutX="392.0" layoutY="7.0" text="ครั้งที่ 2" />
+                                    <Label layoutX="539.0" layoutY="7.0" text="ครั้งที่ 3" />
+                                    <Label layoutX="686.0" layoutY="7.0" text="ครั้งที่ 4" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Soil &amp; Leaves Analysis">
+               <content>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                     <content>
+                        <VBox>
+                           <children>
+                              <Label text="ข้อมูลการวิเคราะห์ตัวอย่างใบและคำแนะนำการใช้ปุ๋ย">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                    <Label text="วันที่" />
+                                    <Pane prefHeight="24.0" prefWidth="128.0" />
+                                    <TextField fx:id="slaDate" prefHeight="24.0" prefWidth="309.0" promptText="วันที่" />
+                                 </children>
+                              </HBox>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                    <Label text="หน่วยงานที่ตรวจวิเคราะห์" />
+                                    <Pane prefHeight="24.0" prefWidth="19.0" />
+                                    <TextField fx:id="slaOrg" prefHeight="24.0" prefWidth="310.0" promptText="ชื่อหน่วยงาน" />
+                                 </children>
+                              </HBox>
+                              <Accordion>
+                                 <panes>
+                                    <TitledPane animated="true" text="ผลการวิเคราะห์">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0">
+                                             <children>
+                                                <TableView fx:id="slaR" prefHeight="80.0" prefWidth="602.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="slaC1" prefWidth="75.0" text="N" />
+                                                      <TableColumn fx:id="slaC2" prefWidth="75.0" text="P" />
+                                                      <TableColumn fx:id="slaC3" prefWidth="75.0" text="K" />
+                                                      <TableColumn fx:id="slaC4" prefWidth="75.0" text="Mg" />
+                                                      <TableColumn fx:id="slaC5" prefWidth="75.0" text="Ca" />
+                                                      <TableColumn fx:id="slaC6" prefWidth="75.0" text="S" />
+                                                      <TableColumn fx:id="slaC7" prefWidth="75.0" text="B" />
+                                                      <TableColumn fx:id="slaC8" prefWidth="75.0" text="Mn" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="true" prefWidth="648.0" text="สภาพธาตุอาหาร">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="646.0">
+                                             <children>
+                                                <TableView fx:id="sla2R" prefHeight="329.0" prefWidth="602.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="sla2C1" prefWidth="75.0" text="ธาตุอาหาร" />
+                                                      <TableColumn fx:id="sla2C2" prefWidth="175.0" text="ค่ามาตรฐาน" />
+                                                      <TableColumn fx:id="sla2C3" prefWidth="175.0" text="ค่าวิเคราะห์" />
+                                                      <TableColumn fx:id="sla2C4" prefWidth="175.0" text="การแก้ไข" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane animated="true" text="คำแนะนำการใช้ปุ๋ย">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0">
+                                             <children>
+                                                <TableView fx:id="sla3R" prefHeight="400.0" prefWidth="914.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="sla3C1" prefWidth="75.0" text="ชนิดปุ๋ย" />
+                                                      <TableColumn fx:id="sla3C2" prefWidth="75.0" text="อัตรา (กก./ตัน/ปี)" />
+                                                      <TableColumn prefWidth="75.0" text="อัตราการใส่ (กก./ตัน)">
+                                                         <columns>
+                                                            <TableColumn fx:id="sla3C3" prefWidth="75.0" text="ครั้งที่ 1" />
+                                                            <TableColumn fx:id="sla3C4" prefWidth="75.0" text="ครั้งที่ 2" />
+                                                            <TableColumn fx:id="sla3C5" prefWidth="75.0" text="ครั้งที่ 3" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                      <TableColumn fx:id="sla3C6" prefWidth="75.0" text="หมายเหตุ" />
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </TitledPane>
+                                 </panes>
+                              </Accordion>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Soil Analysis">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <VBox prefHeight="617.0" prefWidth="1279.0">
+                           <children>
+                              <Label alignment="CENTER" text="ข้อมูลการวิเคราะห์ตัวอย่างดิน">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="SoilAnalysis" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="SAC1" prefWidth="75.0" text="วันที่" />
+                                    <TableColumn fx:id="SAC2" prefWidth="124.0" text="หน่วยงาน" />
+                                    <TableColumn fx:id="SAC3" prefWidth="64.0" text="ความลึก" />
+                                    <TableColumn prefWidth="123.66666412353516" text="เปอร์เซ็น">
+                                       <columns>
+                                          <TableColumn fx:id="SAC4" prefWidth="75.0" text="N ทั้งหมด" />
+                                          <TableColumn fx:id="SAC5" prefWidth="75.0" text="อินทรียวัตถุ" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="116.66667175292969" text="มก./กก">
+                                       <columns>
+                                          <TableColumn fx:id="SAC6" prefWidth="75.0" text="P ที่นำไปใช้ได้" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="267.0" text="Med/100g">
+                                       <columns>
+                                          <TableColumn fx:id="SAC7" prefWidth="75.0" text="K" />
+                                          <TableColumn fx:id="SAC8" prefWidth="75.0" text="Ca" />
+                                          <TableColumn fx:id="SAC9" prefWidth="75.0" text="Mg" />
+                                          <TableColumn fx:id="SAC10" prefWidth="75.0" text="Na" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="108.0" text="มก./กก">
+                                       <columns>
+                                          <TableColumn fx:id="SAC11" prefWidth="75.0" text="S ที่นำไปใช้ได้" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="75.0" text="Meq/100g">
+                                       <columns>
+                                          <TableColumn fx:id="SAC12" prefWidth="75.0" text="ค่าความเป็นกรด" />
+                                          <TableColumn fx:id="SAC13" prefWidth="75.0" text="ค่าอัลคาไลน์" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="75.0" text="1:5 H2O">
+                                       <columns>
+                                          <TableColumn fx:id="SAC14" prefWidth="75.0" text="pH" />
+                                          <TableColumn fx:id="SAC15" prefWidth="75.0" text="Ec" />
+                                       </columns>
+                                    </TableColumn>
+                                 </columns>
+                              </TableView>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                     <TextField fx:id="SATF1" promptText="วันที่" />
+                                     <TextField fx:id="SATF2" promptText="หน่วยงาน" />
+                                     <TextField fx:id="SATF3" promptText="ความลึก" />
+                                     <TextField fx:id="SATF4" promptText="N ทั้งหมด" />
+                                     <TextField fx:id="SATF5" promptText="อินทรียวัตถุ" />
+                                     <TextField fx:id="SATF6" promptText="P ที่นำไปใช้ได้" />
+                                     <TextField fx:id="SATF7" promptText="K" />
+                                     <TextField fx:id="SATF8" promptText="Ca" />
+                                     <TextField fx:id="SATF9" promptText="Mg" />
+                                     <TextField fx:id="SATF10" promptText="Na" />
+                                     <TextField fx:id="SATF11" promptText="S ที่นำไปใช้ได้" />
+                                     <TextField fx:id="SATF12" promptText="ความเป็นกรด" />
+                                     <TextField fx:id="SATF13" promptText="ต่าอัลคาไลน์" />
+                                     <TextField fx:id="SATF14" promptText="pH" />
+                                     <TextField fx:id="SATF15" promptText="Ec(uS/cm)" />
+
+                                 </children>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="SABT1" mnemonicParsing="false" text="เพิ่ม" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Nutrient Deficiency and Severity">
+               <content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true">
+                     <content>
+                        <VBox prefHeight="615.0" prefWidth="704.0">
+                           <children>
+                              <Label alignment="CENTER" text="อาการธาตุอาหารและระดับความรุนแรงที่พบในแปลง">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="NutrientDeficiency" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colDayND" prefWidth="152.0" text="วันที่" />
+                                    <TableColumn fx:id="colSymptomND" prefWidth="524.0" text="อาการขาดธาตุอาหารที่พบ" />
+                                    <TableColumn fx:id="colRateND" prefWidth="300.0" text="ระดับความรุนแรง" />
+                                    <TableColumn fx:id="colAnnotationND" prefWidth="150.0" text="หมายเหตุ" />
+                                 </columns>
+                              </TableView>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="addColDayND" promptText="วันที่" />
+                                    <TextField fx:id="addColSymptomND" prefHeight="27.0" prefWidth="613.0" promptText="อาการ" />
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <RadioButton fx:id="rb1" mnemonicParsing="false" text="น้อย">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="ND" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rb2" mnemonicParsing="false" selected="true" text="ปานกลาง" toggleGroup="$ND" />
+                                          <RadioButton fx:id="rb3" mnemonicParsing="false" text="มาก" toggleGroup="$ND" />
+                                       </children>
+                                    </VBox>
+                                    <TextField fx:id="addColAnnotationND" promptText="หมายเหตุ" />
+                                    <Button fx:id="btnND1" mnemonicParsing="false" text="เพิ่ม" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Perticide/Herbicide Application">
+               <content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true">
+                     <content>
+                        <VBox>
+                           <children>
+                              <Label alignment="TOP_CENTER" text="ข้อมูลการใช้สารเคมีกำจัดศัตรูพืช" textAlignment="CENTER">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="PerticideApplication" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colDayPA" prefWidth="157.0" text="วันที่" />
+                                    <TableColumn fx:id="colPerticidePA" prefWidth="209.0" text="ชนิดศัตรูพืช" />
+                                    <TableColumn fx:id="colChemPA" prefWidth="263.0" text="ชื่อสารเคมี" />
+                                    <TableColumn fx:id="colRatePA" prefWidth="161.0" text="อัตราที่ใช้ (ปริมาณ/พื้นที่)" />
+                                    <TableColumn fx:id="colAnnotationPA" prefWidth="321.0" text="เหตุผลที่ใช้" />
+                                 </columns>
+                              </TableView>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="addColDayPA" promptText="วันที่" />
+                                    <TextField fx:id="addColPerticidePA" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="218.0" promptText="ชนิดศัตรูพืช" />
+                                    <TextField fx:id="addColChemPA" layoutX="174.0" layoutY="10.0" prefHeight="27.0" prefWidth="258.0" promptText="ชื่อสารเคมี" />
+                                    <TextField fx:id="addColRatePA" layoutX="174.0" layoutY="10.0" prefHeight="27.0" prefWidth="163.0" promptText="อัตราที่ใช่" />
+                                    <TextField fx:id="addColAnnoPA" layoutX="338.0" layoutY="10.0" prefHeight="27.0" prefWidth="327.0" promptText="เหตุผลที่ใช้" />
+                                    <Button fx:id="btnPA1" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="เพิ่ม" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Precipitation">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <VBox>
+                           <children>
+                              <Label alignment="CENTER" text="ข้อมูลปริมาณน้ำฝน">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnCopyPC" mnemonicParsing="false" text="Button" />
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="Precipitation" editable="true" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="PCC1" prefWidth="112.0" text="เดือน" />
+                                    <TableColumn prefWidth="105.66667175292969" text="พ.ศ. 2557">
+                                       <columns>
+                                          <TableColumn fx:id="PCC2" prefWidth="120.33334350585938" text="ปริมาณน้ำฝน (มม.)" />
+                                          <TableColumn fx:id="PCC3" prefWidth="103.33331298828125" text="จำนวนวันฝนตก" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="105.66667175292969" text="พ.ศ. 2558">
+                                       <columns>
+                                          <TableColumn fx:id="PCC4" prefWidth="120.33334350585938" text="ปริมาณน้ำฝน (มม.)" />
+                                          <TableColumn fx:id="PCC5" prefWidth="103.33331298828125" text="จำนวนวันฝนตก" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="105.66667175292969" text="พ.ศ. 2559">
+                                       <columns>
+                                          <TableColumn fx:id="PCC6" prefWidth="120.33334350585938" text="ปริมาณน้ำฝน (มม.)" />
+                                          <TableColumn fx:id="PCC7" prefWidth="103.33331298828125" text="จำนวนวันฝนตก" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="105.66667175292969" text="พ.ศ. 2560">
+                                       <columns>
+                                          <TableColumn fx:id="PCC8" prefWidth="120.33334350585938" text="ปริมาณน้ำฝน (มม.)" />
+                                          <TableColumn fx:id="PCC9" prefWidth="103.33331298828125" text="จำนวนวันฝนตก" />
+                                       </columns>
+                                    </TableColumn>
+                                     <TableColumn prefWidth="105.66667175292969" text="พ.ศ. 2561">
+                                         <columns>
+                                             <TableColumn fx:id="PCC10" prefWidth="120.33334350585938" text="ปริมาณน้ำฝน (มม.)" />
+                                             <TableColumn fx:id="PCC11" prefWidth="103.33331298828125" text="จำนวนวันฝนตก" />
+                                         </columns>
+                                     </TableColumn>
+                                 </columns>
+                              </TableView>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="ปี 2557" />
+                                    <Label text="แหล่งข้อมูล" GridPane.rowIndex="1" />
+                                    <Label text="ข้อมูลเมื่อวันที่" GridPane.rowIndex="2" />
+                                    <ChoiceBox fx:id="PCCB1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="PCTFDate1" promptText="ระบุวันที่" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="PCTFOT1" promptText="ระบุเมื่อเลือกอื่นๆ" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                                     <Label text="ปี 2558" GridPane.rowIndex="3" />
+                                     <Label text="แหล่งข้อมูล" GridPane.rowIndex="4" />
+                                     <Label text="ข้อมูลเมื่อวันที่" GridPane.rowIndex="5" />
+                                     <ChoiceBox fx:id="PCCB2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                     <TextField fx:id="PCTFDate2" promptText="ระบุวันที่" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                     <TextField fx:id="PCTFOT2" promptText="ระบุเมื่อเลือกอื่นๆ" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+
+                                     <Label text="ปี 2559" GridPane.columnIndex="3" />
+                                     <Label text="แหล่งข้อมูล" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                     <Label text="ข้อมูลเมื่อวันที่" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                     <ChoiceBox fx:id="PCCB3" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                     <TextField fx:id="PCTFDate3" promptText="ระบุวันที่" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                     <TextField fx:id="PCTFOT3" promptText="ระบุเมื่อเลือกอื่นๆ" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+                                     <Label text="ปี 2560" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                     <Label text="แหล่งข้อมูล" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                     <Label text="ข้อมูลเมื่อวันที่" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                     <ChoiceBox fx:id="PCCB4" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                     <TextField fx:id="PCTFDate4" promptText="ระบุวันที่" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                                     <TextField fx:id="PCTFOT4" promptText="ระบุเมื่อเลือกอื่นๆ" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+
+                                     <Label text="ปี 2561" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                                     <Label text="แหล่งข้อมูล" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                                     <Label text="ข้อมูลเมื่อวันที่" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                                     <ChoiceBox fx:id="PCCB5" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                                     <TextField fx:id="PCTFDate5" promptText="ระบุวันที่" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                                     <TextField fx:id="PCTFOT5" promptText="ระบุเมื่อเลือกอื่นๆ" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Training History">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <VBox prefHeight="542.0" prefWidth="1024.0">
+                           <children>
+                              <Label alignment="CENTER" text="ประวัติการฝึกอบรม">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="TrainingHistory" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colDayTH" prefWidth="157.0" text="วันที่" />
+                                    <TableColumn fx:id="colWhatTH" prefWidth="311.0" text="เรื่อง" />
+                                    <TableColumn fx:id="colWhereTH" prefWidth="230.0" text="สถานที่" />
+                                    <TableColumn fx:id="colWhoTH" prefWidth="267.0" text="วิทยากร" />
+                                 </columns>
+                              </TableView>
+                              <HBox prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="addColDayTH" promptText="วันที่" />
+                                    <TextField fx:id="addColWhatTH" prefHeight="27.0" prefWidth="332.0" promptText="เรื่อง" />
+                                    <TextField fx:id="addColWhereTH" prefHeight="27.0" prefWidth="290.0" promptText="สถานที่" />
+                                    <TextField fx:id="addColWhoTH" prefHeight="27.0" prefWidth="216.0" promptText="วิทยากร" />
+                                    <Button fx:id="btnTH1" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="เพิ่ม" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Guest Visit">
+               <content>
+                  <ScrollPane>
+                     <content>
+                        <VBox>
+                           <children>
+                              <Label alignment="CENTER" text="ประวัติการเข้าเยี่ยมแปลง">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                              </Separator>
+                              <TableView fx:id="GuestVisit" prefHeight="325.0" prefWidth="674.0" tableMenuButtonVisible="true">
+                                 <columns>
+                                    <TableColumn fx:id="colDayGV" editable="true" prefWidth="156.0" text="วันที่" />
+                                    <TableColumn fx:id="colDetailGV" editable="true" prefWidth="242.0" text="รายละเอียด" />
+                                    <TableColumn fx:id="colSigGV" editable="true" prefWidth="242.0" text="ลายมือชื่อผู้ตรวจเยี่ยม" />
+                                 </columns>
+                              </TableView>
+                              <HBox prefHeight="68.0" prefWidth="674.0">
+                                 <children>
+                                    <TextField fx:id="addColDayGV" promptText="วันที่" />
+                                    <TextField fx:id="addColDetailGV" prefHeight="27.0" prefWidth="244.0" promptText="รายละเอียด" />
+                                    <TextField fx:id="addColSigGV" prefHeight="27.0" prefWidth="224.0" promptText="ลายมือชื่อผู้ตรวจเยี่ยม" />
+                                    <Button fx:id="btnSubmitGV" mnemonicParsing="false" text="เพิ่ม" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+            <Tab text="Management">
+               <content>
+                  <ScrollPane fitToWidth="true" prefWidth="200.0">
+                     <content>
+                        <VBox prefWidth="1280.0">
+                           <children>
+                              <Label text="บันทึกจัดการสวนปาล์ม">
+                                 <padding>
+                                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                 </padding>
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Separator prefWidth="200.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding></Separator>
+                              <TreeTableView fx:id="Management" editable="true" prefHeight="500.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                                <columns>
+                                  <TreeTableColumn fx:id="MGC1" prefWidth="319.0" text="หัวข้อ" />
+                                  <TreeTableColumn fx:id="MGC2" prefWidth="107.0" text="ปี 2557" />
+                                    <TreeTableColumn fx:id="MGC3" prefWidth="75.0" text="ปี 2558" />
+                                    <TreeTableColumn fx:id="MGC4" prefWidth="75.0" text="ปี 2559" />
+                                    <TreeTableColumn fx:id="MGC5" prefWidth="75.0" text="ปี 2560" />
+                                    <TreeTableColumn fx:id="MGC6" prefWidth="75.0" text="ปี 2561" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TreeTableView>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="634.0" minWidth="10.0" prefWidth="76.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1224.0" minWidth="10.0" prefWidth="1204.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="ปี 2557" />
+                                    <Label text="ปี 2558" GridPane.rowIndex="1" />
+                                    <Label text="ปี 2559" GridPane.rowIndex="2" />
+                                    <Label text="ปี 2560" GridPane.rowIndex="3" />
+                                    <Label text="ปี 2561" GridPane.rowIndex="4" />
+                                    <ChoiceBox fx:id="MGCB1" prefWidth="150.0" GridPane.columnIndex="1" />
+                                    <ChoiceBox fx:id="MGCB2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <ChoiceBox fx:id="MGCB3" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <ChoiceBox fx:id="MGCB4" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <ChoiceBox fx:id="MGCB5" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content></Tab>
+            <Tab text="Plantation Audit">
+               <content>
+                  <!--<ScrollPane>-->
+                     <!--<content>-->
+                        <!--<VBox>-->
+                           <!--<children>-->
+                              <!--<Label alignment="CENTER" text="แบบประเมินสวนปาล์มน้ำมัน">-->
+                                 <!--<padding>-->
+                                    <!--<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />-->
+                                 <!--</padding>-->
+                                 <!--<font>-->
+                                    <!--<Font size="20.0" />-->
+                                 <!--</font>-->
+                              <!--</Label>-->
+                              <!--<Separator prefWidth="200.0">-->
+                                 <!--<padding>-->
+                                    <!--<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />-->
+                                 <!--</padding>-->
+                              <!--</Separator>-->
+                              <!--<TableView tableMenuButtonVisible="true">-->
+                                 <!--<columns>-->
+                                    <!--<TableColumn prefWidth="75.0" text="ตัวแปร" />-->
+                                    <!--<TableColumn prefWidth="75.0" text="วันที่ประเมิน">-->
+                                       <!--<columns>-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 1" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 2" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 3" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 4" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 5" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="Mode" />-->
+                                       <!--</columns>-->
+                                    <!--</TableColumn>-->
+                                    <!--<TableColumn prefWidth="75.0" text="วันที่ประเมิน">-->
+                                       <!--<columns>-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 1" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 2" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 3" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 4" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="จุด 5" />-->
+                                          <!--<TableColumn prefWidth="40.0" text="Mode" />-->
+                                       <!--</columns>-->
+                                    <!--</TableColumn>-->
+                                 <!--</columns>-->
+                              <!--</TableView>-->
+                              <!--<Label text="ข้อแนะนำ" />-->
+                              <!--<Button mnemonicParsing="false" text="เพิ่มข้อแนะนำ" />-->
+                           <!--</children>-->
+                           <!--<padding>-->
+                              <!--<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />-->
+                           <!--</padding>-->
+                        <!--</VBox>-->
+                     <!--</content>-->
+                  <!--</ScrollPane>-->
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+
+   </children>
+</VBox>
